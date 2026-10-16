@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffe6ef">
+<title>Untuk Acell, dari Iyoo ♡</title>
+<style>
+:root{--pink:#ff8fb1;--hot:#f45f91;--pale:#fff4f8;--ink:#754557;--cream:#fffafc}
+*{box-sizing:border-box}
+body{margin:0;font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif;color:var(--ink);background:radial-gradient(circle at 15% 10%,#fff 0 5%,transparent 30%),linear-gradient(145deg,#fff0f6,#ffe2ec 55%,#fff7fa);min-height:100vh;overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+.wrap{max-width:760px;margin:auto;padding:28px 18px 60px;text-align:center}
+.pill{display:inline-block;background:#fff9;border:1px solid #ffc4d7;padding:7px 13px;border-radius:99px;font-size:.85rem}
+h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.08;margin:16px 0 10px;color:#d94e83}
+.subtitle{max-width:520px;margin:0 auto 22px;line-height:1.65}
+.scene{position:relative;min-height:290px;display:grid;place-items:center;margin:10px auto 20px}
+.glow{position:absolute;width:250px;height:210px;background:#ffbad0;filter:blur(48px);opacity:.45;border-radius:50%}
+.gift{position:relative;width:190px;height:165px;border:0;background:transparent;filter:drop-shadow(0 12px 8px #bd648333);transition:transform .25s}
+.gift:hover{transform:translateY(-5px) rotate(-2deg)}
+.boxbase{position:absolute;bottom:0;left:15px;width:160px;height:105px;border-radius:9px 9px 14px 14px;background:linear-gradient(110deg,#ff9fbd,#ff76a4);border:2px solid #fff4}
+.boxbase:before{content:"";position:absolute;left:60px;top:0;width:34px;height:100%;background:#fff0b8}
+.lid{position:absolute;left:5px;top:38px;width:180px;height:35px;border-radius:8px;background:linear-gradient(#ffb5cb,#ff8eaf);border:2px solid #fff8;z-index:2}
+.lid:before{content:"";position:absolute;left:70px;top:0;width:34px;height:100%;background:#fff0b8}
+.bow{position:absolute;z-index:3;top:7px;left:67px;width:60px;height:40px}
+.bow:before,.bow:after{content:"";position:absolute;width:30px;height:25px;border:7px solid #fff0b8;border-radius:70% 70% 20% 70%;transform:rotate(25deg)}
+.bow:after{left:27px;transform:scaleX(-1) rotate(25deg)}
+.bow i{position:absolute;left:24px;top:20px;width:15px;height:15px;background:#fff0b8;border-radius:50%}
+.gift.open .lid{animation:openlid .65s forwards}
+.gift.open .bow{animation:bowup .65s forwards}
+@keyframes openlid{to{transform:translate(8px,-52px) rotate(12deg)}}
+@keyframes bowup{to{transform:translate(15px,-55px) rotate(12deg)}}
+.hint{font-size:.92rem;margin-top:0}
+.card{background:#ffffffc9;border:1px solid #ffd0df;border-radius:22px;padding:22px;margin:18px 0;box-shadow:0 8px 28px #e78ca31c;text-align:left}
+.card h2{text-align:center;color:#d94e83;margin:0 0 14px;font-size:1.35rem}
+.hidden{display:none!important}
+.reveal{animation:rise .6s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.letter{line-height:1.85;white-space:pre-line}
+.photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.photo{min-height:155px;border-radius:16px;background:linear-gradient(145deg,#ffe1ec,#fff7fa);border:1px dashed #f3a2bc;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.photo img{width:100%;height:100%;min-height:155px;object-fit:cover;position:absolute;inset:0}
+.photo span{padding:12px;font-size:.9rem;line-height:1.5}
+.caption{font-size:.78rem;color:#a76a81;margin-top:10px}
+.controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:16px 0}
+.btn{border:0;border-radius:99px;background:var(--hot);color:white;padding:12px 18px;box-shadow:0 5px 0 #d74c7a;font-weight:700}
+.btn.secondary{background:#fff;color:#d94e83;border:1px solid #ffc0d4;box-shadow:none}
+.note{background:#fff0b8;border-radius:16px;padding:16px;text-align:center;line-height:1.7;min-height:78px}
+footer{font-size:.83rem;opacity:.8;margin-top:28px}
+.heart{position:fixed;pointer-events:none;z-index:10;animation:float 2.6s ease-out forwards}
+@keyframes float{to{transform:translateY(-100vh) rotate(35deg);opacity:0}}
+@media(max-width:430px){.scene{min-height:250px}.photos{gap:8px}.card{padding:18px}.photo,.photo img{min-height:130px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <span class="pill">♡ hadiah kecil dari Iyoo ♡</span>
+  <h1>For my Acell 🎀</h1>
+  <p class="subtitle">Ada sesuatu yang Iyoo siapkan khusus buat Acell. Pelan-pelan bukanya, yaa. Semoga bikin senyum sedikit lebih lebar hari ini. 💗</p>
+
+  <section class="scene" aria-label="Kotak hadiah interaktif">
+    <div class="glow"></div>
+    <button class="gift" id="gift" aria-label="Buka kotak hadiah">
+      <span class="bow"><i></i></span><span class="lid"></span><span class="boxbase"></span>
+    </button>
+  </section>
+  <p class="hint" id="hint">Ketuk kotak hadiahnya, Acell! ☝🏻💞</p>
+
+  <div id="contents" class="hidden">
+    <div class="controls">
+      <button class="btn" id="musicBtn">♫ Putar musik romantis</button>
+      <button class="btn secondary" id="heartBtn">Kirim hujan hati ♡</button>
+    </div>
+
+    <section class="card reveal">
+      <h2>💌 Surat kecil untuk Acell</h2>
+      <div class="letter">Hai, Acell sayanggg! 🥹💗
+
+Kalau Acell lagi capek, lagi banyak pikiran, atau merasa hari ini berat, ingat yaa... Acell nggak harus selalu kuat setiap waktu. Istirahat juga nggak apa-apa. Iyoo bangga sama Acell yang sudah berusaha sejauh ini.
+
+Mungkin Iyoo belum selalu bisa ada di samping Acell secara langsung, tapi doa dan sayang Iyoo selalu ikut menemani. Semoga setiap kali Acell membuka website kecil ini, Acell ingat kalau ada seseorang yang senang banget karena Acell hadir di dunia ini.
+
+Makasih sudah jadi Acell yang Iyoo sayang. Jangan lupa makan, minum air, hati-hati saat beraktivitas, dan pulang dengan selamat, yaa. Kalau lelah, cerita sama Iyoo. Kita hadapi pelan-pelan, sama-sama. 🧸
+
+With all my love,
+Iyoo ♡</div>
+    </section>
+
+    <section class="card reveal">
+      <h2>🙏🏻 Doa Iyoo buat Acell</h2>
+      <div class="letter">Tuhan, tolong jaga Acell di mana pun dia berada. Berikan kesehatan, hati yang tenang, pikiran yang kuat, dan perlindungan dalam setiap langkahnya. Lancarkan pekerjaannya, jauhkan dari bahaya, dan pertemukan dia dengan orang-orang yang baik.
+
+Saat Acell merasa lelah, semoga Tuhan memberinya kekuatan. Saat dia sedih, semoga ada penghiburan. Saat dia bingung, semoga ada jalan yang baik untuknya. Berkati juga hubungan kami supaya kami bisa saling mengasihi, memahami, menjaga, dan bertumbuh menjadi pribadi yang lebih baik.
+
+Amin. 🤍</div>
+    </section>
+
+    <section class="card reveal">
+      <h2>📸 Little memories, big love</h2>
+      <p style="text-align:center;line-height:1.6">Beberapa tempat kecil untuk kenangan kita. Ganti gambar contoh ini dengan foto kalian sebelum website dipublikasikan.</p>
+      <div class="photos">
+        <label class="photo"><img src="foto1.jpg" alt="Kenangan pertama" onerror="this.style.display='none'"><span>📷 Foto kenangan 1<br><small>Ganti dengan foto kalian</small></span></label>
+        <label class="photo"><img src="foto2.jpg" alt="Kenangan kedua" onerror="this.style.display='none'"><span>🧸 Foto kenangan 2<br><small>Ganti dengan foto kalian</small></span></label>
+        <label class="photo"><img src="foto3.jpg" alt="Kenangan ketiga" onerror="this.style.display='none'"><span>🌷 Foto kenangan 3<br><small>Ganti dengan foto kalian</small></span></label>
+        <label class="photo"><img src="foto4.jpg" alt="Kenangan keempat" onerror="this.style.display='none'"><span>💗 Foto kenangan 4<br><small>Ganti dengan foto kalian</small></span></label>
+      </div>
+      <p class="caption">Tips: beri nama foto kalian foto1.jpg, foto2.jpg, foto3.jpg, dan foto4.jpg.</p>
+    </section>
+
+    <section class="card reveal">
+      <h2>🎁 Satu kejutan lagi...</h2>
+      <p style="text-align:center;line-height:1.7">Ada pesan kecil yang cuma muncul kalau Acell menekan tombol di bawah ini. Jangan curang, yaa! 🤏🏻</p>
+      <div class="controls"><button class="btn" id="surpriseBtn">Buka kejutan rahasia 💝</button></div>
+      <div id="surprise" class="note hidden">Pssttt... kalau Iyoo bisa mengulang satu hal, Iyoo tetap akan memilih untuk mengenal Acell. Semoga nanti ada lebih banyak foto, cerita receh, doa bersama, dan hari-hari sederhana yang bisa kita kenang. I love you, Acell. Jangan lupa, kamu berharga dan disayang. 💗🧸</div>
+    </section>
+    <p style="font-size:1.15rem;color:#d94e83;font-weight:800">Acell + Iyoo = cerita yang ingin terus dijaga ♡</p>
+  </div>
+  <footer>Dibuat dengan banyak sayang oleh Iyoo untuk Acell ♡</footer>
+</main>
+<script>
+const gift=document.getElementById('gift');
+const contents=document.getElementById('contents');
+const hint=document.getElementById('hint');
+gift.addEventListener('click',()=>{
+  if(!gift.classList.contains('open')){
+    gift.classList.add('open'); contents.classList.remove('hidden'); hint.textContent='Yayyy! Hadiahnya terbuka khusus buat Acell! 💗';
+    setTimeout(()=>contents.scrollIntoView({behavior:'smooth',block:'start'}),350);
+    burst(18);
+  }
+});
+function burst(n=12){
+  const symbols=['💗','💕','♡','✨','🎀'];
+  for(let i=0;i<n;i++){
+    const el=document.createElement('span');el.className='heart';el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    el.style.left=(Math.random()*94+3)+'vw';el.style.top=(Math.random()*55+30)+'vh';el.style.fontSize=(16+Math.random()*20)+'px';
+    document.body.appendChild(el);setTimeout(()=>el.remove(),2700);
+  }
+}
+document.getElementById('heartBtn').addEventListener('click',()=>burst(35));
+document.getElementById('surpriseBtn').addEventListener('click',()=>{
+  document.getElementById('surprise').classList.toggle('hidden');
+  document.getElementById('surpriseBtn').textContent=document.getElementById('surprise').classList.contains('hidden')?'Buka kejutan rahasia 💝':'Tutup kejutan 🤭';
+  burst(14);
+});
+// A tiny original melody generated in the browser, so no copyrighted song or extra audio file is needed.
+let audioCtx=null, melodyTimer=null, musicOn=false, step=0;
+const notes=[523.25,659.25,783.99,659.25,587.33,698.46,880,698.46,523.25,659.25,783.99,1046.5,880,783.99,659.25,587.33];
+function playNote(freq){
+  if(!audioCtx)return;
+  const osc=audioCtx.createOscillator(), gain=audioCtx.createGain();
+  osc.type='sine';osc.frequency.value=freq;gain.gain.setValueAtTime(.0001,audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(.055,audioCtx.currentTime+.04);
+  gain.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+.48);
+  osc.connect(gain);gain.connect(audioCtx.destination);osc.start();osc.stop(audioCtx.currentTime+.5);
+}
+function stopMusic(){if(melodyTimer)clearInterval(melodyTimer);melodyTimer=null;musicOn=false;document.getElementById('musicBtn').textContent='♫ Putar musik romantis';}
+document.getElementById('musicBtn').addEventListener('click',async()=>{
+  if(musicOn){stopMusic();return}
+  const AC=window.AudioContext||window.webkitAudioContext;
+  if(!AC){alert('Browser ini belum mendukung musik otomatis.');return}
+  audioCtx=audioCtx||new AC();await audioCtx.resume();musicOn=true;
+  document.getElementById('musicBtn').textContent='Ⅱ Hentikan musik';
+  playNote(notes[step%notes.length]);step++;
+  melodyTimer=setInterval(()=>{if(musicOn){playNote(notes[step%notes.length]);step++}},430);
+});
+</script>
+</body>
+</html>
